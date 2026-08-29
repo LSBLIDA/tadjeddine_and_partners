@@ -37,3 +37,6 @@ Thumbs.db
 # Server-specific Git scripts
 update_from_github.sh
 push_to_github.sh
+
+# Generated Astro build
+dist/

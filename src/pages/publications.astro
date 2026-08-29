@@ -1,49 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import '../styles/publications.css';
+import { publications } from '../data/publications';
+import { useTranslations } from '../i18n/utils';
 
+const t = useTranslations('fr');
 
-const res = await fetch(
-  `${import.meta.env.PUBLIC_STRAPI_URL}/api/publications?populate=*&sort=Date_mise_en_ligne:desc`
-);
-
-const { data } = await res.json();
-const publications = data || [];
+const sortedPublications = [...publications].sort((a, b) => {
+  return new Date(b.date_mise_en_ligne).getTime() - new Date(a.date_mise_en_ligne).getTime();
+});
 ---
 
-<Layout title="Publications">
+<Layout title={t('publications.title')}>
   <section class="publications-section container">
-    <h1 class="section-title"><i class="fas fa-book"></i> Nos Publications</h1>
-    <p class="section-subtitle">Découvrez nos dernières publications et rapports</p>
+    <h1 class="section-title"><i class="fas fa-book"></i> {t('publications.title')}</h1>
+    <p class="section-subtitle">{t('publications.subtitle')}</p>
 
-    {publications.length === 0 ? (
-      <p class="no-publications">Aucune publication disponible pour le moment.</p>
+    {sortedPublications.length === 0 ? (
+      <p class="no-publications">{t('publications.no_publications')}</p>
     ) : (
       <div class="publications-grid">
-        {publications.map(pub => (
-          <a href={`/publications/${pub.Slug}`} class="publication-card">
-            
-            {pub.Image_couverture?.url && (
+        {sortedPublications.map(pub => (
+          <a href={`/publications/${pub.slug}`} class="publication-card">
+            {pub.image_couverture && (
               <img 
-                src={`${import.meta.env.PUBLIC_STRAPI_URL}${pub.Image_couverture.url}`} 
-                alt={pub.Titre} 
+                src={pub.image_couverture} 
+                alt={pub.title} 
                 class="publication-img"
               />
             )}
 
             <h2 class="publication-title">
-              <i class="fas fa-file-alt"></i> {pub.Titre || "Sans titre"}
+              <i class="fas fa-file-alt"></i> {pub.title || "Sans titre"}
             </h2>
             <p class="publication-meta">
-              <i class="fas fa-calendar-alt"></i> {pub.Date_mise_en_ligne || "Date inconnue"} 
+              <i class="fas fa-calendar-alt"></i> {pub.date_mise_en_ligne || "Date inconnue"} 
               &nbsp;|&nbsp; 
-              <i class="fas fa-tag"></i> {pub.Prix > 0 ? pub.Prix + " DA" : "Gratuit"}
+              <i class="fas fa-tag"></i> {pub.is_free ? t('publications.free') : (pub.prix ? pub.prix + " DA" : t('publications.free'))}
             </p>
             <p class="publication-excerpt">
-              {pub.Description?.[0]?.children?.[0]?.text?.slice(0, 120) || "Pas de description..."}
+              {pub.excerpt || (pub.description?.[0]?.slice(0, 120) + "...") || ""}
             </p>
             <span class="read-more">
-              <i class="fas fa-arrow-right"></i> Lire plus
+              <i class="fas fa-arrow-right"></i> {t('publications.read_more')}
             </span>
           </a>
         ))}

@@ -1,0 +1,23 @@
+{
+  "publications": {
+    "buy": "Buy",
+    "download": "Download",
+    "free": "Free",
+    "read_sample": "Read an excerpt from the document",
+    "view_all": "View all publications",
+    "published_on": "Published on:",
+    "no_publications": "No publications available at the moment.",
+    "title": "Our Publications",
+    "subtitle": "Discover our latest publications and reports",
+    "read_more": "Read more"
+  },
+  "articles": {
+    "title": "Our Articles",
+    "subtitle": "Discover our latest publications and insights",
+    "no_articles": "No articles available at the moment.",
+    "read_article": "Read article →",
+    "back_to_articles": "← Back to articles",
+    "author_unknown": "Unknown author",
+    "date_unspecified": "Unspecified date"
+  }
+}

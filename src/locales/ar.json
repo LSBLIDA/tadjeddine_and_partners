@@ -1,0 +1,23 @@
+{
+  "publications": {
+    "buy": "شراء",
+    "download": "تحميل",
+    "free": "مجاني",
+    "read_sample": "قراءة مقتطف من الوثيقة",
+    "view_all": "عرض جميع المنشورات",
+    "published_on": "تاريخ النشر :",
+    "no_publications": "لا توجد منشورات متاحة حالياً.",
+    "title": "منشوراتنا",
+    "subtitle": "اكتشف أحدث منشوراتنا وتقاريرنا",
+    "read_more": "اقرأ المزيد"
+  },
+  "articles": {
+    "title": "مقالاتنا",
+    "subtitle": "اكتشف أحدث مقالاتنا وتحليلاتنا",
+    "no_articles": "لا توجد مقالات متاحة حالياً.",
+    "read_article": "اقرأ المقال ←",
+    "back_to_articles": "→ العودة إلى المقالات",
+    "author_unknown": "كاتب غير معروف",
+    "date_unspecified": "تاريخ غير محدد"
+  }
+}
