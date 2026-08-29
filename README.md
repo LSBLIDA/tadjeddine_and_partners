@@ -1,3 +1,10 @@
+
+cd /root/tadjeddine_and_partners_deploy
+
+git pull --ff-only
+
+./deploy.sh
+
 # Tadjeddine & Partners - Site Web
 
 Site web officiel de Tadjeddine & Partners, cabinet spécialisé dans l'accompagnement des entreprises vers la conformité réglementaire, la transformation digitale et l'optimisation des performances.
