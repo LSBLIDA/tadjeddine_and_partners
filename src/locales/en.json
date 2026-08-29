@@ -37,5 +37,224 @@
     "preview_button": "Voir l'aperçu sur Google Drive",
     "preview_footer": "Accédez à l'aperçu complet du livre via Google Drive",
     "close_modal": "Fermer"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "articles": "Articles",
+    "publications": "Publications",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "page_title": "Home - Tadjeddine & Partners",
+    "hero_title": "Your trusted partner for <span class=\"highlight\">compliance</span> and <span class=\"highlight\">digital transformation</span>",
+    "hero_subtitle": "Tadjeddine & Partners supports companies towards regulatory compliance, digital transformation, and the optimization of commercial and organizational performance.",
+    "btn_services": "Discover our services",
+    "btn_contact": "Contact us",
+    "recent_pub_title": "📅 Recent Publication",
+    "pub_card_title": "Analysis of the Algerian Banking Sector – 2025 Edition",
+    "pub_btn": "View publication"
+  },
+  "services": {
+    "page_title": "Our Services - Tadjeddine & Partners",
+    "title": "Our Services",
+    "subtitle": "Comprehensive and customized solutions to support your company in its growth and transformation",
+    "srv1_title": "Compliance with Law 18-07",
+    "srv1_items": [
+      "Audit and compliance diagnostic",
+      "Data processing mapping",
+      "Implementation of compliant policies",
+      "Assistance with ANPDP declaration",
+      "Team training",
+      "Continuous support"
+    ],
+    "srv2_title": "Training & Consulting",
+    "srv2_items": [
+      "Employee awareness",
+      "DPO training",
+      "Practical workshops on Law 18-07",
+      "Compliance managers"
+    ],
+    "srv3_title": "Commercial Audit",
+    "srv3_items": [
+      "Diagnostic of commercial strategies",
+      "Performance analysis",
+      "CRM tools evaluation",
+      "Competitive benchmarking",
+      "Commercial action plan"
+    ],
+    "srv4_title": "Agile Transformation",
+    "srv4_items": [
+      "Audit of current practices",
+      "Agile methodologies (Scrum, Kanban)",
+      "PMO implementation",
+      "Team coaching",
+      "Project management training"
+    ],
+    "srv5_title": "HR Strategies",
+    "srv5_items": [
+      "HR audit and organizational diagnostic",
+      "HR policies and compliance",
+      "Recruitment and talent management",
+      "Management and soft skills training",
+      "Compensation optimization"
+    ],
+    "srv6_title": "ERP & CRM Solutions",
+    "srv6_items": [
+      "Drafting of specifications",
+      "Consulting and choice of suitable ERP",
+      "Integration and configuration",
+      "Deployment of CRM solutions",
+      "Support and maintenance"
+    ]
+  },
+  "about": {
+    "page_title": "About Tadjeddine & Partners",
+    "title": "About",
+    "subtitle": "Our commitment to excellence and compliance",
+    "p1": "Tadjeddine & Partners is a leading consulting firm in Algeria, specializing in strategic consulting and compliance support, particularly in personal data protection (Law 18-07). We provide customized solutions to companies, public institutions, and non-profit organizations, helping them overcome complex challenges, comply with regulatory requirements, and improve their performance.",
+    "p2": "Our expertise is based on a team of experienced consultants and the regular production of in-depth sectoral studies, which inform our clients' strategic decisions. Guided by values of integrity, ethics, and excellence, we are committed to generating a lasting impact in a constantly evolving environment."
+  },
+  "contact": {
+    "page_title": "Contact Us - Tadjeddine & Partners",
+    "title": "Contact Us",
+    "subtitle": "Ready to transform your business? Contact us today for personalized and effective support.",
+    "email": "Email",
+    "phone": "Phone",
+    "hours": "Hours",
+    "hours_week": "Sun - Thu: 9:00 AM - 4:00 PM",
+    "hours_weekend": "Sat: 9:00 AM - 1:00 PM"
+  },
+  "footer": {
+    "desc": "Consulting firm specialized in personal data protection, compliance with Law 18-07, and digital transformation.",
+    "nav": "Navigation",
+    "legal": "Legal",
+    "contact": "Contact",
+    "legal_mentions": "Legal Mentions",
+    "privacy": "Privacy Policy",
+    "cgu": "TOS",
+    "country": "Algeria",
+    "rights": "© 2025 Tadjeddine & Partners. All rights reserved. | Transforming ideas into concrete results through multidisciplinary expertise."
+  },
+  "cgu": {
+    "title": "Terms of Use (TOU)",
+    "page_title": "Terms of Use",
+    "sections": [
+      {
+        "title": "1. Purpose",
+        "content": "These Terms of Use (TOU) govern the access and use of the <strong>Tadjeddine & Partners</strong> website, a consulting firm in strategy, organization, and digital transformation. By accessing the site, the user accepts these TOU without reservation."
+      },
+      {
+        "title": "2. Access to the Site",
+        "content": "The site is accessible free of charge to any user with internet access. All costs related to the connection (hardware, software, subscription, etc.) are the responsibility of the user."
+      },
+      {
+        "title": "3. Services Offered",
+        "content": "<strong>Tadjeddine & Partners</strong> provides information on its consulting services, its publications, as well as contact forms for information or quote requests. The contents are informative and do not constitute a contractual commitment."
+      },
+      {
+        "title": "4. User Obligations",
+        "content": "The user agrees to use the site in accordance with current legislation and not to infringe on the rights of <strong>Tadjeddine & Partners</strong> or third parties. It is strictly forbidden to publish illicit, defamatory, or privacy-infringing content."
+      },
+      {
+        "title": "5. Intellectual Property",
+        "content": "All site content (texts, images, logos, graphics, etc.) is protected by intellectual property rights and belongs to <strong>Tadjeddine & Partners</strong>. Any unauthorized reproduction or distribution is strictly prohibited."
+      },
+      {
+        "title": "6. Limitation of Liability",
+        "content": "Information on the site is provided for indicative purposes. <strong>Tadjeddine & Partners</strong> cannot be held responsible for inaccuracies, omissions, or temporary unavailability of the site."
+      },
+      {
+        "title": "7. Protection of Personal Data",
+        "content": "Data collected via the site is processed in accordance with Law 18-07 on the protection of personal data. For more information, please consult our <a href='/{lang}/politique-confidentialite'>Privacy Policy</a>."
+      },
+      {
+        "title": "8. Modification of the TOU",
+        "content": "<strong>Tadjeddine & Partners</strong> reserves the right to modify these TOU at any time. The applicable version is the one published on the site on the date of consultation."
+      },
+      {
+        "title": "9. Applicable Law",
+        "content": "These TOU are governed by Algerian law. Any dispute will be subject to the exclusive jurisdiction of the competent courts."
+      }
+    ]
+  },
+  "mentions": {
+    "title": "Legal Mentions",
+    "page_title": "Legal Mentions",
+    "sections": [
+      {
+        "title": "Site Publisher",
+        "content": "<strong>eurl Tadjeddine & Partners with a capital of 20,000,000 DA</strong><br />Address: Rue G N° 1, Cité Naimi Centre Zabana, Blida – Algeria<br />CR: 10B0981001 - TIN: 001016098100195 - AI: 09010399908<br />Email: <a href='mailto:info@tadjeddine-partners.com'>info@tadjeddine-partners.com</a><br />Phone: 05.60.403.405 / 05.60.349.059<br />Manager: TADJEDDINE BACHIR"
+      },
+      {
+        "title": "Hosting",
+        "content": "Djezzy Cloud<br />Route de wilaya, Lot n°37/4, Dar El Beida, Algiers, Algeria<br />Email: contact@djezzy.dz"
+      },
+      {
+        "title": "Intellectual Property",
+        "content": "All contents on the site (texts, images, videos, logos, etc.) are the exclusive property of <strong>eurl Tadjeddine & Partners</strong>, unless otherwise noted. Any total or partial reproduction, distribution, or reuse is strictly prohibited without prior written authorization."
+      },
+      {
+        "title": "Protection of Personal Data",
+        "content": "To learn more about the collection and processing of your data, please consult our <a href='/{lang}/politique-confidentialite'>Privacy Policy</a>."
+      },
+      {
+        "title": "Terms of Use",
+        "content": "Use of the site implies full acceptance of the general terms of use (TOU). The publisher reserves the right to modify these terms at any time."
+      },
+      {
+        "title": "Hyperlinks",
+        "content": "Links to other sites may be provided. <strong>Tadjeddine & Partners</strong> declines all responsibility for external content accessible from these links."
+      },
+      {
+        "title": "Applicable Law",
+        "content": "These legal mentions are governed by Algerian law. In the event of a dispute, the courts of Blida have exclusive jurisdiction."
+      }
+    ]
+  },
+  "privacy": {
+    "page_title": "Privacy Policy - Tadjeddine & Partners",
+    "title": "Privacy Policy",
+    "company_name": "TADJEDDINE AND PARTNERS",
+    "back_to_home": "Back to Home",
+    "sections": [
+      {
+        "title": "1. Identity of the Data Controller",
+        "content": "<p>In accordance with the provisions of Law No. 18-07 of June 10, 2018, relating to the protection of personal data, the data controller for the collected data is <strong>TADJEDDINE AND PARTNERS</strong>, a company registered in the Commercial Register under the number 10B0981001, whose head office is located at Cité Naimi, Rue G N° 1, Zabana, Blida, represented by its legal manager Mr. Tadjeddine BACHIR.</p><p>In its capacity as data controller, TADJEDDINE AND PARTNERS is committed to complying with all applicable legal and regulatory obligations regarding the protection of personal data.</p>"
+      },
+      {
+        "title": "2. Collected Data",
+        "content": "<p>As part of its commercial activities, TADJEDDINE AND PARTNERS collects and processes the following data concerning its prospects:</p><ul class=\"data-list\"><li>First and last name</li><li>Email address</li><li>Phone number</li><li>Company name</li><li>Job title / Position</li><li>Website</li></ul>"
+      },
+      {
+        "title": "3. Purposes of Processing",
+        "content": "<p>The collected data is processed exclusively for the following purposes:</p><ul class=\"purpose-list\"><li>Responding to contact or information requests made by prospects</li><li>Sending commercial offers tailored to expressed needs</li><li>Following up on pre-contractual commercial relationships</li><li>Conducting internal commercial analysis and statistics</li></ul>"
+      },
+      {
+        "title": "4. Data Recipients",
+        "content": "<p>Personal data is processed exclusively by authorized personnel of TADJEDDINE AND PARTNERS and is neither transferred nor sold to third parties.</p><p>Any potential transmission to technical subcontractors (notably email service providers) is governed by a contract including strict obligations of confidentiality and compliance with the provisions of Law No. 18-07.</p>"
+      },
+      {
+        "title": "5. Retention Period",
+        "content": "<p>Collected data is kept for a maximum period of three (3) years from the last contact or interaction from the prospect, unless opposition or withdrawal of consent is exercised in accordance with legal provisions.</p>"
+      },
+      {
+        "title": "6. Security Measures",
+        "content": "<p>TADJEDDINE AND PARTNERS implements all appropriate technical and organizational measures to ensure the confidentiality, integrity, and availability of processed personal data.</p>"
+      },
+      {
+        "title": "7. Rights of Data Subjects",
+        "content": "<p>In accordance with articles 7 and 34 to 36 of Law No. 18-07, any data subject has the following rights:</p><ul class=\"rights-list\"><li>Right of access to their personal data</li><li>Right of rectification of inaccurate or incomplete data</li><li>Right to object to processing for legitimate reasons</li><li>Right to withdraw consent at any time</li></ul><p><strong>To exercise these rights, any request can be addressed:</strong></p><div class=\"contact-methods\"><p><strong>By email</strong> to the following address: <a href=\"mailto:info@tadjeddine-partners.com\" class=\"email-link\">info@tadjeddine-partners.com</a></p><p><strong>By postal mail</strong> to the head office address: TADJEDDINE AND PARTNERS, Cité Naimi, Rue G N° 1, Zabana, Blida.</p></div>"
+      },
+      {
+        "title": "8. International Data Transfers",
+        "content": "<p>No transfer of personal data abroad is made without obtaining the prior authorizations required by Law No. 18-07.</p>"
+      },
+      {
+        "title": "9. Policy Updates",
+        "content": "<p>TADJEDDINE AND PARTNERS reserves the right to modify this privacy policy at any time, particularly to account for any legislative or regulatory developments. The updated version is made available upon request or through usual communication channels.</p>"
+      }
+    ]
   }
 }

@@ -5,7 +5,7 @@ import ar from '../locales/ar.json';
 const translations: Record<string, Record<string, any>> = { fr, en, ar };
 
 export function useTranslations(lang: string = 'fr') {
-  return function t(key: string): string {
+  return function t(key: string): any {
     const keys = key.split('.');
     let current: any = translations[lang] || translations['fr'];
     for (const k of keys) {
@@ -15,6 +15,6 @@ export function useTranslations(lang: string = 'fr') {
         return key;
       }
     }
-    return typeof current === 'string' ? current : key;
+    return current;
   };
 }

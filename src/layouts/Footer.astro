@@ -1,3 +1,8 @@
+---
+import { useTranslations } from '../i18n/utils';
+const lang = Astro.params.lang || Astro.url.pathname.split('/')[1] || 'fr';
+const t = useTranslations(lang);
+---
 <footer class="footer">
   <div class="container footer-container">
     
@@ -5,41 +10,41 @@
     <div class="footer-col">
       <h4>Tadjeddine & Partners</h4>
       <p>
-        Cabinet de conseil spécialisé en protection des données personnelles, conformité à la loi 18-07 et transformation digitale.
+        {t('footer.desc')}
       </p>
     </div>
 
     <!-- Colonne 2 -->
     <div class="footer-col">
-      <h4>Navigation</h4>
+      <h4>{t('footer.nav')}</h4>
       <ul>
-        <li><a href="/accueil">Accueil</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/articles">Articles</a></li>
-        <li><a href="/publications">Publications</a></li>
-        <li><a href="/apropos">À propos</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href={`/${lang}`}>{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/services`}>{t('nav.services')}</a></li>
+        <li><a href={`/${lang}/articles`}>{t('nav.articles')}</a></li>
+        <li><a href={`/${lang}/publications`}>{t('nav.publications')}</a></li>
+        <li><a href={`/${lang}/apropos`}>{t('nav.about')}</a></li>
+        <li><a href={`/${lang}/contact`}>{t('nav.contact')}</a></li>
       </ul>
     </div>
 
     <!-- Colonne 3 -->
     <div class="footer-col">
-      <h4>Légal</h4>
+      <h4>{t('footer.legal')}</h4>
       <ul>
-        <li><a href="/mentions-legales">Mentions légales</a></li>
-        <li><a href="/politique-confidentialite">Politique de confidentialité</a></li>
-        <li><a href="/cgu">CGU</a></li>
+        <li><a href={`/${lang}/mentions-legales`}>{t('footer.legal_mentions')}</a></li>
+        <li><a href={`/${lang}/politique-confidentialite`}>{t('footer.privacy')}</a></li>
+        <li><a href={`/${lang}/cgu`}>{t('footer.cgu')}</a></li>
       </ul>
     </div>
 
     <!-- Colonne 4 -->
    <div class="footer-col">
-  <h4>Contact</h4>
+  <h4>{t('footer.contact')}</h4>
   <ul>
     <li><i class="fas fa-envelope"></i> info@tadjeddine-partners.com</li>
     <li><i class="fas fa-phone-alt"></i> 05.60.403.405</li>
     <li><i class="fas fa-phone-alt"></i> 05.60.349.059</li>
-    <li><i class="fas fa-map-marker-alt"></i> Algérie</li>
+    <li><i class="fas fa-map-marker-alt"></i> {t('footer.country')}</li>
   </ul>
 </div>
 
@@ -50,12 +55,11 @@
   }
 </style>
 
-
   </div>
 
   <!-- Bas de page -->
   <div class="footer-bottom">
-    <p>© 2025 Tadjeddine & Partners. Tous droits réservés. | Transformer les idées en résultats concrets grâce à une expertise pluridisciplinaire.</p>
+    <p>{t('footer.rights')}</p>
   </div>
 </footer>
 
@@ -114,5 +118,12 @@
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 15px;
     color: #cbd5e1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

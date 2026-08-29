@@ -1,0 +1,166 @@
+---
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fr' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'ar' } }
+  ];
+}
+const { lang } = Astro.params;
+
+import Layout from '../../layouts/Layout.astro';
+import { useTranslations } from '../../i18n/utils';
+const t = useTranslations(lang);
+const sections = t('privacy.sections') || [];
+---
+
+<Layout title={t('privacy.page_title')}>
+	<div class="privacy-policy">
+		<div class="container">
+			<div class="privacy-content">
+				<h1 class="privacy-title">{t('privacy.title')}</h1>
+				<div class="company-name">{t('privacy.company_name')}</div>
+
+				{Array.isArray(sections) && sections.map((section: any) => (
+					<section class="privacy-section">
+						<h2>{section.title}</h2>
+						<div set:html={section.content}></div>
+					</section>
+				))}
+
+				<div class="back-link">
+					<a href={`/${lang}`} class="btn btn-primary">{t('privacy.back_to_home')}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.privacy-policy {
+		padding: 8rem 0 4rem;
+		background: #0f0f0f;
+		min-height: 100vh;
+	}
+
+	.privacy-content {
+		max-width: 800px;
+		margin: 0 auto;
+		background: rgba(31, 41, 55, 0.5);
+		backdrop-filter: blur(10px);
+		padding: 3rem;
+		border-radius: 1rem;
+		border: 1px solid rgba(55, 65, 81, 0.5);
+	}
+
+	.privacy-title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		text-align: center;
+		margin-bottom: 1rem;
+		background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.company-name {
+		text-align: center;
+		font-size: 1.25rem;
+		font-weight: 600;
+		color: #cbd5e1;
+		margin-bottom: 3rem;
+		padding-bottom: 1rem;
+		border-bottom: 2px solid rgba(203, 213, 225, 0.3);
+	}
+
+	.privacy-section {
+		margin-bottom: 2.5rem;
+	}
+
+	.privacy-section h2 {
+		font-size: 1.5rem;
+		font-weight: 600;
+		color: #f8fafc;
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid rgba(248, 250, 252, 0.2);
+	}
+
+	.privacy-section :global(p) {
+		color: #d1d5db;
+		line-height: 1.7;
+		margin-bottom: 1rem;
+	}
+
+	.privacy-section :global(ul) {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0;
+	}
+
+	.privacy-section :global(ul li) {
+		color: #d1d5db;
+		padding: 0.5rem 0;
+		padding-inline-start: 1.5rem;
+		position: relative;
+	}
+
+	.privacy-section :global(ul li::before) {
+		content: '•';
+		position: absolute;
+		inset-inline-start: 0;
+		color: #f8fafc;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+
+	.privacy-section :global(.contact-methods) {
+		background: rgba(55, 65, 81, 0.3);
+		padding: 1.5rem;
+		border-radius: 0.5rem;
+		margin-top: 1rem;
+		border-inline-start: 4px solid #f8fafc;
+	}
+
+	.privacy-section :global(.contact-methods p) {
+		margin-bottom: 0.75rem;
+	}
+
+	.privacy-section :global(.email-link) {
+		color: #f8fafc;
+		text-decoration: none;
+		font-weight: 500;
+		transition: color 0.3s ease;
+	}
+
+	.privacy-section :global(.email-link:hover) {
+		color: #cbd5e1;
+	}
+
+	.back-link {
+		text-align: center;
+		margin-top: 3rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgba(248, 250, 252, 0.2);
+	}
+
+	@media (max-width: 768px) {
+		.privacy-policy {
+			padding: 6rem 0 3rem;
+		}
+
+		.privacy-content {
+			padding: 2rem;
+			margin: 0 1rem;
+		}
+
+		.privacy-title {
+			font-size: 2rem;
+		}
+
+		.privacy-section :global(.contact-methods) {
+			padding: 1rem;
+		}
+	}
+</style>

@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/services.css';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fr' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'ar' } }
+  ];
+}
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<Layout title={t('services.page_title')}>
+  <section id="services" class="services">
+    <div class="container">
+      <h2 class="section-title">{t('services.title')}</h2>
+      <p class="section-subtitle">
+        {t('services.subtitle')}
+      </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+          <h3>{t('services.srv1_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv1_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3>{t('services.srv2_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv2_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>{t('services.srv3_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv3_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <h3>{t('services.srv4_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv4_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>{t('services.srv5_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv5_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop"></i></div>
+          <h3>{t('services.srv6_title')}</h3>
+          <ul class="service-list">
+            {t('services.srv6_items').map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .service-icon {
+    font-size: 2rem;
+    color: #ccc; /* Monochrome gris clair */
+    margin-bottom: 1rem;
+  }
+</style>

@@ -37,5 +37,224 @@
     "preview_button": "Voir l'aperçu sur Google Drive",
     "preview_footer": "Accédez à l'aperçu complet du livre via Google Drive",
     "close_modal": "Fermer"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Services",
+    "articles": "Articles",
+    "publications": "Publications",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "home": {
+    "page_title": "Accueil - Tadjeddine & Partners",
+    "hero_title": "Votre partenaire de confiance pour la <span class=\"highlight\">conformité</span> et la <span class=\"highlight\">transformation digitale</span>",
+    "hero_subtitle": "Tadjeddine & Partners accompagne les entreprises vers la conformité réglementaire, la transformation digitale et l'optimisation des performances commerciales et organisationnelles.",
+    "btn_services": "Découvrir nos services",
+    "btn_contact": "Nous contacter",
+    "recent_pub_title": "📅 Publication récente",
+    "pub_card_title": "Analyse du secteur bancaire algérien – Édition 2025",
+    "pub_btn": "Consulter la publication"
+  },
+  "services": {
+    "page_title": "Nos Services - Tadjeddine & Partners",
+    "title": "Nos Services",
+    "subtitle": "Des solutions complètes et personnalisées pour accompagner votre entreprise dans sa croissance et sa transformation",
+    "srv1_title": "Conformité à la loi 18-07",
+    "srv1_items": [
+      "Audit et diagnostic de conformité",
+      "Cartographie des traitements de données",
+      "Mise en place de politiques conformes",
+      "Assistance à la déclaration ANPDP",
+      "Formation des équipes",
+      "Accompagnement continu"
+    ],
+    "srv2_title": "Formation & Conseil",
+    "srv2_items": [
+      "Sensibilisation des employés",
+      "Formation des DPO",
+      "Ateliers pratiques loi 18-07",
+      "Responsables de conformité"
+    ],
+    "srv3_title": "Audit Commercial",
+    "srv3_items": [
+      "Diagnostic des stratégies commerciales",
+      "Analyse des performances",
+      "Évaluation des outils CRM",
+      "Benchmarking concurrentiel",
+      "Plan d'action commercial"
+    ],
+    "srv4_title": "Transformation Agile",
+    "srv4_items": [
+      "Audit des pratiques actuelles",
+      "Méthodologies agiles (Scrum, Kanban)",
+      "Mise en place du PMO",
+      "Coaching des équipes",
+      "Formation gestion de projet"
+    ],
+    "srv5_title": "Stratégies RH",
+    "srv5_items": [
+      "Audit RH et diagnostic organisationnel",
+      "Politiques RH et conformité",
+      "Recrutement et gestion des talents",
+      "Formation management et soft skills",
+      "Optimisation des rémunérations"
+    ],
+    "srv6_title": "Solutions ERP & CRM",
+    "srv6_items": [
+      "Conception de cahiers des charges",
+      "Conseil et choix d'ERP adapté",
+      "Intégration et paramétrage",
+      "Déploiement de solutions CRM",
+      "Support et maintenance"
+    ]
+  },
+  "about": {
+    "page_title": "À propos de Tadjeddine & Partners",
+    "title": "À propos",
+    "subtitle": "Notre engagement pour l’excellence et la conformité",
+    "p1": "Tadjeddine & Partners est un cabinet de référence en Algérie, spécialisé dans la consultation stratégique et l’accompagnement à la conformité, notamment en matière de protection des données personnelles (loi 18-07). Nous apportons des solutions sur mesure aux entreprises, institutions publiques et organisations à but non lucratif, en les aidant à relever des défis complexes, à se conformer aux exigences réglementaires et à améliorer leur performance.",
+    "p2": "Notre expertise s’appuie sur une équipe de consultants expérimentés et sur la production régulière d’études sectorielles approfondies, qui éclairent les décisions stratégiques de nos clients. Guidés par des valeurs d’intégrité, d’éthique et d’excellence, nous nous engageons à générer un impact durable dans un environnement en constante évolution."
+  },
+  "contact": {
+    "page_title": "Contactez-nous - Tadjeddine & Partners",
+    "title": "Contactez-nous",
+    "subtitle": "Prêt à transformer votre entreprise ? Contactez-nous dès aujourd'hui pour un accompagnement personnalisé et efficace.",
+    "email": "Email",
+    "phone": "Téléphone",
+    "hours": "Horaires",
+    "hours_week": "Dim - Jeu: 9h00 - 16h00",
+    "hours_weekend": "Sam: 9h00 - 13h00"
+  },
+  "footer": {
+    "desc": "Cabinet de conseil spécialisé en protection des données personnelles, conformité à la loi 18-07 et transformation digitale.",
+    "nav": "Navigation",
+    "legal": "Légal",
+    "contact": "Contact",
+    "legal_mentions": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "cgu": "CGU",
+    "country": "Algérie",
+    "rights": "© 2025 Tadjeddine & Partners. Tous droits réservés. | Transformer les idées en résultats concrets grâce à une expertise pluridisciplinaire."
+  },
+  "cgu": {
+    "title": "Conditions Générales d'Utilisation (CGU)",
+    "page_title": "Conditions Générales d'Utilisation",
+    "sections": [
+      {
+        "title": "1. Objet",
+        "content": "Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation du site <strong>Tadjeddine & Partners</strong>, cabinet de conseil en stratégie, organisation et transformation digitale. En accédant au site, l’utilisateur accepte sans réserve les présentes CGU."
+      },
+      {
+        "title": "2. Accès au site",
+        "content": "Le site est accessible gratuitement à tout utilisateur disposant d’un accès Internet. Tous les frais liés à la connexion (matériel, logiciel, abonnement, etc.) sont à la charge de l’utilisateur."
+      },
+      {
+        "title": "3. Services proposés",
+        "content": "<strong>Tadjeddine & Partners</strong> met à disposition des informations sur ses prestations de conseil, ses publications, ainsi que des formulaires de contact pour les demandes d’information ou de devis. Les contenus ont une vocation informative et ne constituent pas un engagement contractuel."
+      },
+      {
+        "title": "4. Obligations de l'utilisateur",
+        "content": "L’utilisateur s’engage à utiliser le site conformément à la législation en vigueur et à ne pas porter atteinte aux droits de <strong>Tadjeddine & Partners</strong> ou de tiers. Il lui est interdit de publier des contenus illicites, diffamatoires, ou portant atteinte à la vie privée."
+      },
+      {
+        "title": "5. Propriété intellectuelle",
+        "content": "L’ensemble du contenu du site (textes, images, logos, chartes graphiques, etc.) est protégé par le droit de la propriété intellectuelle et appartient à <strong>Tadjeddine & Partners</strong>. Toute reproduction ou diffusion non autorisée est strictement interdite."
+      },
+      {
+        "title": "6. Limitation de responsabilité",
+        "content": "Les informations diffusées sur le site sont fournies à titre indicatif. <strong>Tadjeddine & Partners</strong> ne saurait être tenue responsable en cas d’inexactitudes, omissions ou indisponibilité temporaire du site."
+      },
+      {
+        "title": "7. Protection des données personnelles",
+        "content": "Les données collectées via le site sont traitées conformément à la loi 18-07 relative à la protection des données personnelles. Pour plus d’informations, veuillez consulter notre <a href='/{lang}/politique-confidentialite'>Politique de confidentialité</a>."
+      },
+      {
+        "title": "8. Modification des CGU",
+        "content": "<strong>Tadjeddine & Partners</strong> se réserve le droit de modifier à tout moment les présentes CGU. La version applicable est celle publiée sur le site à la date de consultation."
+      },
+      {
+        "title": "9. Droit applicable",
+        "content": "Les présentes CGU sont régies par le droit algérien. Tout litige sera soumis à la compétence exclusive des tribunaux compétents."
+      }
+    ]
+  },
+  "mentions": {
+    "title": "Mentions légales",
+    "page_title": "Mentions légales",
+    "sections": [
+      {
+        "title": "Éditeur du site",
+        "content": "<strong>eurl Tadjeddine & Partners au capital de 20.000.000 DA</strong><br />Adresse : Rue G N° 1, Cité Naimi Centre Zabana, Blida – Algérie<br />RC : 10B0981001 - NIF : 001016098100195 - AI : 09010399908<br />Email : <a href='mailto:info@tadjeddine-partners.com'>info@tadjeddine-partners.com</a><br />Téléphone : 05.60.403.405 / 05.60.349.059<br />Gérant : TADJEDDINE BACHIR"
+      },
+      {
+        "title": "Hébergement",
+        "content": "Djezzy Cloud<br />Route de wilaya, Lot n°37/4, Dar El Beida, Alger, Algérie<br />Email : contact@djezzy.dz"
+      },
+      {
+        "title": "Propriété intellectuelle",
+        "content": "L'ensemble des contenus présents sur le site (textes, images, vidéos, logos, etc.) sont la propriété exclusive de <strong>eurl Tadjeddine & Partners</strong>, sauf mention contraire. Toute reproduction, distribution ou réutilisation, totale ou partielle, est strictement interdite sans autorisation écrite préalable."
+      },
+      {
+        "title": "Protection des données personnelles",
+        "content": "Pour en savoir plus sur la collecte et le traitement de vos données, veuillez consulter notre <a href='/{lang}/politique-confidentialite'>Politique de confidentialité</a>."
+      },
+      {
+        "title": "Conditions d'utilisation",
+        "content": "L'utilisation du site implique l'acceptation pleine et entière des conditions générales d'utilisation (CGU). L’éditeur se réserve le droit de modifier ces conditions à tout moment."
+      },
+      {
+        "title": "Liens hypertextes",
+        "content": "Des liens vers d'autres sites peuvent être proposés. <strong>Tadjeddine & Partners</strong> décline toute responsabilité quant aux contenus externes accessibles depuis ces liens."
+      },
+      {
+        "title": "Droit applicable",
+        "content": "Les présentes mentions légales sont régies par le droit algérien. En cas de litige, les tribunaux du ressort de Blida sont seuls compétents."
+      }
+    ]
+  },
+  "privacy": {
+    "page_title": "Politique de Confidentialité - Tadjeddine & Partners",
+    "title": "Politique de Confidentialité",
+    "company_name": "TADJEDDINE AND PARTNERS",
+    "back_to_home": "Retour à l'accueil",
+    "sections": [
+      {
+        "title": "1. Identité du responsable du traitement",
+        "content": "<p>Conformément aux dispositions de la loi n° 18-07 du 10 juin 2018 relative à la protection des données à caractère personnel, le responsable du traitement des données collectées est <strong>TADJEDDINE AND PARTNERS</strong>, société immatriculée au Registre du Commerce sous le numéro 10B0981001, dont le siège social est situé à Cité Naimi, Rue G N° 1, Zabana, Blida, représentée par son gérant légal M. Tadjeddine BACHIR.</p><p>En sa qualité de responsable du traitement, TADJEDDINE AND PARTNERS s'engage à se conformer à l'ensemble des obligations légales et réglementaires applicables en matière de protection des données à caractère personnel.</p>"
+      },
+      {
+        "title": "2. Données collectées",
+        "content": "<p>Dans le cadre de ses activités commerciales, TADJEDDINE AND PARTNERS collecte et traite les données suivantes concernant ses prospects :</p><ul class=\"data-list\"><li>Nom et prénom</li><li>Adresse e-mail</li><li>Numéro de téléphone</li><li>Nom de l'entreprise</li><li>Fonction / Poste</li><li>Site web</li></ul>"
+      },
+      {
+        "title": "3. Finalités du traitement",
+        "content": "<p>Les données collectées sont traitées exclusivement aux fins suivantes :</p><ul class=\"purpose-list\"><li>Répondre aux demandes de contact ou d'information formulées par les prospects</li><li>Adresser des offres commerciales adaptées aux besoins exprimés</li><li>Assurer le suivi de la relation commerciale précontractuelle</li><li>Réaliser des analyses et des statistiques commerciales internes</li></ul>"
+      },
+      {
+        "title": "4. Destinataires des données",
+        "content": "<p>Les données à caractère personnel sont traitées exclusivement par le personnel habilité de TADJEDDINE AND PARTNERS et ne font l'objet d'aucune cession ni vente à des tiers.</p><p>Toute transmission éventuelle à des sous-traitants techniques (notamment prestataires d'envoi d'e-mails) est encadrée par un contrat intégrant des obligations strictes de confidentialité et de conformité aux dispositions de la loi n° 18-07.</p>"
+      },
+      {
+        "title": "5. Durée de conservation",
+        "content": "<p>Les données collectées sont conservées pendant une durée maximale de trois (3) ans à compter du dernier contact ou de la dernière interaction de la part du prospect, sauf opposition ou retrait de consentement exercé conformément aux dispositions légales.</p>"
+      },
+      {
+        "title": "6. Mesures de sécurité",
+        "content": "<p>TADJEDDINE AND PARTNERS met en place toutes les mesures techniques et organisationnelles appropriées pour garantir la confidentialité, l'intégrité et la disponibilité des données à caractère personnel traitées.</p>"
+      },
+      {
+        "title": "7. Droits des personnes concernées",
+        "content": "<p>Conformément aux articles 7 et 34 à 36 de la loi n° 18-07, toute personne concernée bénéficie des droits suivants :</p><ul class=\"rights-list\"><li>Droit d'accès à ses données à caractère personnel</li><li>Droit de rectification des données inexactes ou incomplètes</li><li>Droit d'opposition au traitement pour motifs légitimes</li><li>Droit de retrait du consentement à tout moment</li></ul><p><strong>Pour exercer ces droits, toute demande peut être adressée :</strong></p><div class=\"contact-methods\"><p><strong>Par courrier électronique</strong> à l'adresse suivante : <a href=\"mailto:info@tadjeddine-partners.com\" class=\"email-link\">info@tadjeddine-partners.com</a></p><p><strong>Par voie postale</strong> à l'adresse du siège social : TADJEDDINE AND PARTNERS, Cité Naimi, Rue G N° 1, Zabana, Blida.</p></div>"
+      },
+      {
+        "title": "8. Transferts internationaux de données",
+        "content": "<p>Aucun transfert de données à caractère personnel vers l'étranger n'est effectué sans l'obtention des autorisations préalables requises par la loi n° 18-07.</p>"
+      },
+      {
+        "title": "9. Mise à jour de la politique",
+        "content": "<p>TADJEDDINE AND PARTNERS se réserve le droit de modifier la présente politique de confidentialité à tout moment, notamment pour tenir compte de toute évolution législative ou réglementaire. La version actualisée est tenue à disposition sur demande ou via les canaux de communication habituels.</p>"
+      }
+    ]
   }
 }

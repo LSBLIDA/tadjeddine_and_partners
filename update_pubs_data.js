@@ -1,4 +1,10 @@
-export interface Publication {
+import fs from 'fs';
+import path from 'path';
+
+function updatePublicationsData() {
+  const filePath = path.join('src', 'data', 'publications.ts');
+  
+  let content = `export interface Publication {
   slug: string;
   title: string;
   title_en?: string;
@@ -158,3 +164,10 @@ export const publications: Publication[] = [
 export function getPublicationBySlug(slug: string): Publication | undefined {
   return publications.find(publication => publication.slug === slug);
 }
+`;
+  
+  fs.writeFileSync(filePath, content, 'utf8');
+  console.log("Updated publications.ts");
+}
+
+updatePublicationsData();

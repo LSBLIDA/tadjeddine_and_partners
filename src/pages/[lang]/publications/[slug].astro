@@ -1,0 +1,133 @@
+---
+
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/publication-details.css';
+import { publications, type Publication } from '../../../data/publications';
+import { useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const langs = ['fr', 'en', 'ar'];
+  return langs.flatMap(lang => 
+    publications.map(publication => ({
+      params: { lang, slug: publication.slug },
+      props: { publication },
+    }))
+  );
+}
+
+interface Props {
+  publication: Publication;
+}
+
+
+const { lang } = Astro.params;
+const { publication } = Astro.props;
+const t = useTranslations(lang);
+
+// Inject logic to replace '/fr/' with '/${lang}/' for external links
+const redirect_url = publication.redirect_url ? publication.redirect_url.replace('/fr/', `/${lang}/`) : null;
+const lien_achat = publication.lien_achat && publication.lien_achat.includes('algeriabankingindex.com') 
+    ? publication.lien_achat.replace('/fr/', `/${lang}/`) 
+    : publication.lien_achat;
+
+---
+
+{redirect_url ? (
+  <Layout title={publication.meta_title || "Redirection…"}>
+    <Fragment slot="head">
+      <link rel="canonical" href={redirect_url} />
+      <meta http-equiv="refresh" content={`0; url=${redirect_url}`} />
+    </Fragment>
+    <div class="container" style="text-align: center; padding: 100px 20px;">
+      <p>
+        Redirection vers <a href={redirect_url} style="color: #d4af37;">{redirect_url}</a>…
+      </p>
+    </div>
+    <script define:vars={{ redirectUrl: redirect_url }}>
+      window.location.replace(redirectUrl);
+    </script>
+  </Layout>
+) : (
+  <Layout title={publication[`title_${lang}` as keyof typeof publication] || publication.title || t('publications.title')}>
+    <main class="publication-detail-grid">
+      
+      <!-- Colonne gauche -->
+      <div>
+        <!-- 🔙 Lien retour placé AU-DESSUS du cadre -->
+        <div class="back-to-publications">
+          <a href="/publications">
+            <i class="fas fa-arrow-left"></i> {t('publications.view_all')}
+          </a>
+        </div>
+
+        <div class="publication-card publication-left">
+          {publication.image_couverture && (
+            <img
+              src={publication.image_couverture}
+              alt={publication[`title_${lang}` as keyof typeof publication] || publication.title}
+              class="publication-img"
+            />
+          )}
+
+          {/* 🔹 Prix (si payant sans lien d'achat direct) */}
+          {publication.prix !== undefined && publication.prix !== 0 && !lien_achat && (
+            <p class="publication-price">{typeof publication.prix === 'string' ? publication.prix : publication.prix + ' DA HT'}</p>
+          )}
+
+          {/* 🔹 Extrait PDF si disponible */}
+          {publication.apercu_url && (
+            <div class="extrait-wrapper">
+              <a
+                href={publication.apercu_url}
+                class="extrait-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color:#d4af37 !important; text-decoration:none !important; font-weight:400 !important;"
+              >
+                ↩ {t('publications.read_sample')}
+              </a>
+            </div>
+          )}
+
+          {/* 🔹 Bouton Acheter vers la page dédiée */}
+          {lien_achat ? (
+            <div class="btn-group">
+              <a
+                href={lien_achat}
+                class="download-btn buy-btn"
+              >
+                {t('publications.buy')}
+              </a>
+            </div>
+          ) : publication.fichier_url ? (
+            <div class="btn-group">
+              <a
+                href={publication.fichier_url}
+                class="download-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t('publications.download')}
+              </a>
+            </div>
+          ) : null}
+        </div>
+      </div>
+
+      <!-- Colonne droite -->
+      <div class="publication-card publication-right">
+        <h1 class="section-title">{publication[`title_${lang}` as keyof typeof publication] || publication.title}</h1>
+        <p class="publication-meta">
+          <strong>{t('publications.published_on')}</strong> {publication.display_date || publication.date_mise_en_ligne}
+        </p>
+
+        <div class="publication-content">
+          {(publication[`description_${lang}` as keyof typeof publication] || publication.description)?.map((paragraph) => (
+            <p>{paragraph}</p>
+          ))}
+        </div>
+      </div>
+
+    </main>
+  </Layout>
+)}

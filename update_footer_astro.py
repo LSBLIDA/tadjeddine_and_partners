@@ -1,0 +1,139 @@
+import os
+
+file_path = os.path.join('src', 'layouts', 'Footer.astro')
+
+content = """---
+import { useTranslations } from '../i18n/utils';
+const lang = Astro.params.lang || Astro.url.pathname.split('/')[1] || 'fr';
+const t = useTranslations(lang);
+---
+<footer class="footer">
+  <div class="container footer-container">
+    
+    <!-- Colonne 1 -->
+    <div class="footer-col">
+      <h4>Tadjeddine & Partners</h4>
+      <p>
+        {t('footer.desc')}
+      </p>
+    </div>
+
+    <!-- Colonne 2 -->
+    <div class="footer-col">
+      <h4>{t('footer.nav')}</h4>
+      <ul>
+        <li><a href={`/${lang}`}>{t('nav.home')}</a></li>
+        <li><a href={`/${lang}/services`}>{t('nav.services')}</a></li>
+        <li><a href={`/${lang}/articles`}>{t('nav.articles')}</a></li>
+        <li><a href={`/${lang}/publications`}>{t('nav.publications')}</a></li>
+        <li><a href={`/${lang}/apropos`}>{t('nav.about')}</a></li>
+        <li><a href={`/${lang}/contact`}>{t('nav.contact')}</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 -->
+    <div class="footer-col">
+      <h4>{t('footer.legal')}</h4>
+      <ul>
+        <li><a href={`/${lang}/mentions-legales`}>{t('footer.legal_mentions')}</a></li>
+        <li><a href={`/${lang}/politique-confidentialite`}>{t('footer.privacy')}</a></li>
+        <li><a href={`/${lang}/cgu`}>{t('footer.cgu')}</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 4 -->
+   <div class="footer-col">
+  <h4>{t('footer.contact')}</h4>
+  <ul>
+    <li><i class="fas fa-envelope"></i> info@tadjeddine-partners.com</li>
+    <li><i class="fas fa-phone-alt"></i> 05.60.403.405</li>
+    <li><i class="fas fa-phone-alt"></i> 05.60.349.059</li>
+    <li><i class="fas fa-map-marker-alt"></i> {t('footer.country')}</li>
+  </ul>
+</div>
+
+<style>
+  .footer-col i {
+    color: #ccc; /* Icônes monochromes */
+    margin-right: 8px;
+  }
+</style>
+
+  </div>
+
+  <!-- Bas de page -->
+  <div class="footer-bottom">
+    <p>{t('footer.rights')}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: black;
+    color: #fff;
+    padding: 40px 0 20px;
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  .footer h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #cbd5e1;
+  }
+
+  .footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer ul li {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+  }
+
+  .footer a {
+    color: #cbd5e1; /* Gris clair */
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 15px;
+    color: #cbd5e1;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+"""
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Updated Footer.astro")

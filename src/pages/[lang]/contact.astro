@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/contact.css';
+import { useTranslations } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'fr' } },
+    { params: { lang: 'en' } },
+    { params: { lang: 'ar' } }
+  ];
+}
+const { lang } = Astro.params;
+const t = useTranslations(lang);
+---
+
+<Layout title={t('contact.page_title')}>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">{t('contact.title')}</h2>
+      <p class="section-subtitle">
+        {t('contact.subtitle')}
+      </p>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <h4>{t('contact.email')}</h4>
+              <a href="mailto:info@tadjeddine-partners.com">info@tadjeddine-partners.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-details">
+              <h4>{t('contact.phone')}</h4>
+              <a href="tel:+213560403405">05.60.403.405</a><br />
+              <a href="tel:+213560349059">05.60.349.059</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-details">
+              <h4>{t('contact.hours')}</h4>
+              <p>{t('contact.hours_week')}</p>
+              <p>{t('contact.hours_weekend')}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <div class="iframe-container">
+            <iframe
+              width="100%"
+              height="600"
+              src="https://fenekio.com/tandp/ps/forms/wtl/c5040eb5db4cc6676466348f789133bb"
+              frameborder="0"
+              sandbox="allow-top-navigation allow-forms allow-scripts allow-same-origin allow-popups"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-icon {
+    font-size: 1.8rem;
+    color: #ccc; /* Couleur monochrome */
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+</style>

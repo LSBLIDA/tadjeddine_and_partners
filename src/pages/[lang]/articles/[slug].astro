@@ -1,0 +1,101 @@
+---
+
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/article-slug.css';
+import { articles, type Article } from '../../../data/articles';
+import { useTranslations } from '../../../i18n/utils';
+
+export async function getStaticPaths() {
+  const langs = ['fr', 'en', 'ar'];
+  return langs.flatMap(lang => 
+    articles.map(article => ({
+      params: { lang, slug: article.slug },
+      props: { article },
+    }))
+  );
+}
+
+interface Props {
+  article: Article;
+}
+
+const { lang } = Astro.params;
+const { article } = Astro.props;
+const t = useTranslations(lang);
+
+const meta_title = article.meta_title || article.title;
+const meta_description = article.meta_description || article.excerpt || "";
+const canonicalUrl = `${Astro.site || "https://tadjeddine-partners.com"}/articles/${article.slug}`;
+const imageUrl = article.image_couverture || null;
+---
+
+<Layout title={meta_title}>
+  <Fragment slot="head">
+    <meta name="description" content={meta_description} />
+
+    <!-- Open Graph (LinkedIn, Facebook) -->
+    <meta property="og:title" content={meta_title} />
+    <meta property="og:description" content={meta_description} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalUrl} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {imageUrl && <meta property="og:image:alt" content={article.title} />}
+    {imageUrl && <meta property="og:image:width" content="1200" />}
+    {imageUrl && <meta property="og:image:height" content="630" />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={meta_title} />
+    <meta name="twitter:description" content={meta_description} />
+    {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+  </Fragment>
+
+  <section class="container">
+    <main class="article-detail">
+      <h1 class="article-title">{article.title}</h1>
+      <p class="article-meta">✍️ {article.author} | 📅 {article.date_publication}</p>
+      
+      <!-- Liens de partage -->
+      <div class="article-share">
+        <a 
+          href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl + '?ref=linkedin')}`} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label="Partager sur LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a 
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Partager sur Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+
+        <a 
+          href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(article.title)}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label="Partager sur Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+
+      {imageUrl && (
+        <div class="article-cover">
+          <img src={imageUrl} alt={article.title} />
+        </div>
+      )}
+
+      <div class="article-content" set:html={article.content}></div>
+
+      <div class="back-to-articles">
+        <a href="/articles">{t('articles.back_to_articles')}</a>
+      </div>
+    </main>
+  </section>
+</Layout>

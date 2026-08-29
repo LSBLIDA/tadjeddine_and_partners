@@ -4,6 +4,29 @@ export interface Props {
 }
 
 const { title } = Astro.props;
+import { useTranslations } from '../i18n/utils';
+
+// Extraire la langue de l'URL ou des params
+const lang = Astro.params.lang || Astro.url.pathname.split('/')[1] || 'fr';
+const t = useTranslations(lang);
+
+// Extraire de manière robuste le chemin sans la langue
+const currentPath = Astro.url.pathname;
+let pathWithoutLang = currentPath;
+const langs = ['fr', 'en', 'ar'];
+for (const l of langs) {
+  if (pathWithoutLang.startsWith(`/${l}/`)) {
+    pathWithoutLang = pathWithoutLang.substring(l.length + 1);
+    break;
+  } else if (pathWithoutLang === `/${l}`) {
+    pathWithoutLang = '/';
+    break;
+  }
+}
+if (!pathWithoutLang.startsWith('/')) {
+  pathWithoutLang = '/' + pathWithoutLang;
+}
+
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Footer from './Footer.astro';
@@ -11,7 +34,7 @@ import Footer from './Footer.astro';
 
 
 <!doctype html>
-<html lang="fr">
+<html lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Tadjeddine & Partners - Cabinet spécialisé dans l'accompagnement des entreprises vers la conformité réglementaire, la transformation digitale et l'optimisation des performances." />
@@ -43,12 +66,18 @@ import Footer from './Footer.astro';
 
         <!-- Liens navigation -->
         <nav class="nav-links">
-          <a href="/" class="nav-link">Accueil</a>
-          <a href="/services" class="nav-link">Services</a>
-          <a href="/articles" class="nav-link">Articles</a>
-          <a href="/publications" class="nav-link">Publications</a>
-          <a href="/apropos" class="nav-link">À propos</a>
-          <a href="/contact" class="nav-link">Contact</a>
+          <a href={`/${lang}`} class="nav-link">{t('nav.home')}</a>
+          <a href={`/${lang}/services`} class="nav-link">{t('nav.services')}</a>
+          <a href={`/${lang}/articles`} class="nav-link">{t('nav.articles')}</a>
+          <a href={`/${lang}/publications`} class="nav-link">{t('nav.publications')}</a>
+          <a href={`/${lang}/apropos`} class="nav-link">{t('nav.about')}</a>
+          <a href={`/${lang}/contact`} class="nav-link">{t('nav.contact')}</a>
+          
+          <div class="lang-selector">
+            <a href={`/fr${pathWithoutLang === '/' ? '' : pathWithoutLang}`} class={lang === 'fr' ? 'active' : ''}>FR</a> |
+            <a href={`/en${pathWithoutLang === '/' ? '' : pathWithoutLang}`} class={lang === 'en' ? 'active' : ''}>EN</a> |
+            <a href={`/ar${pathWithoutLang === '/' ? '' : pathWithoutLang}`} class={lang === 'ar' ? 'active' : ''}>AR</a>
+          </div>
         </nav>
       </div>
     </header>
@@ -132,6 +161,23 @@ import Footer from './Footer.astro';
   }
 
   .nav-link:hover {
+    color: #fbbf24;
+  }
+
+  
+  .lang-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 500;
+  }
+  .lang-selector a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .lang-selector a:hover, .lang-selector a.active {
     color: #fbbf24;
   }
 

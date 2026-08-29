@@ -1,4 +1,9 @@
-export interface Publication {
+import os
+import json
+
+file_path = os.path.join('src', 'data', 'publications.ts')
+
+content = r"""export interface Publication {
   slug: string;
   title: string;
   title_en?: string;
@@ -158,3 +163,9 @@ export const publications: Publication[] = [
 export function getPublicationBySlug(slug: string): Publication | undefined {
   return publications.find(publication => publication.slug === slug);
 }
+"""
+
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print("Updated publications.ts safely.")
