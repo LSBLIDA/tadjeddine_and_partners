@@ -19,5 +19,23 @@
     "back_to_articles": "→ العودة إلى المقالات",
     "author_unknown": "كاتب غير معروف",
     "date_unspecified": "تاريخ غير محدد"
+  },
+  "livre": {
+    "title": "Transformation Digitale de l'Administration",
+    "subtitle": "Le premier livre traitant de la transformation digitale de l'administration en Algérie",
+    "preface": "Préface Par Pr. Youcef Mentalecheta, \"le père de l'informatique en Algérie\"",
+    "buy_algeria": "Achetez en Algérie",
+    "buy_amazon": "Achetez sur Amazon",
+    "content_title": "Contenu du 4ème de couverture",
+    "quote": "\"Allah ne change rien en un peuple tant qu'ils ne changent pas ce qui est en eux-mêmes\"",
+    "paragraph_1": "Ce livre aborde de manière accessible les concepts, avantages et défis de l'e-gouvernement dans le contexte algérien. Il s'adresse aux décideurs, journalistes, professionnels du secteur public et privé, chercheurs et étudiants.",
+    "paragraph_2": "L'objectif est de fournir une compréhension claire de la transformation digitale de l'administration publique et de ses implications pour le développement du pays.",
+    "author_title": "À propos de l'auteur",
+    "author_bio": "Ancien président du Groupement des Acteurs du Numérique Algérien (GAAN) de 2020 à 2022, expert reconnu en transformation digitale.",
+    "preview_title": "Aperçu du Livre - Premières Pages",
+    "preview_subtitle": "Consultez l'aperçu complet du livre",
+    "preview_button": "Voir l'aperçu sur Google Drive",
+    "preview_footer": "Accédez à l'aperçu complet du livre via Google Drive",
+    "close_modal": "Fermer"
   }
 }

@@ -34,9 +34,9 @@ const sortedPublications = [...publications].sort((a, b) => {
               <i class="fas fa-file-alt"></i> {pub.title || "Sans titre"}
             </h2>
             <p class="publication-meta">
-              <i class="fas fa-calendar-alt"></i> {pub.date_mise_en_ligne || "Date inconnue"} 
+              <i class="fas fa-calendar-alt"></i> {pub.display_date || pub.date_mise_en_ligne || "Date inconnue"} 
               &nbsp;|&nbsp; 
-              <i class="fas fa-tag"></i> {pub.is_free ? t('publications.free') : (pub.prix ? pub.prix + " DA" : t('publications.free'))}
+              <i class="fas fa-tag"></i> {pub.is_free ? t('publications.free') : (pub.prix ? (typeof pub.prix === 'string' ? pub.prix : pub.prix + " DA") : t('publications.free'))}
             </p>
             <p class="publication-excerpt">
               {pub.excerpt || (pub.description?.[0]?.slice(0, 120) + "...") || ""}

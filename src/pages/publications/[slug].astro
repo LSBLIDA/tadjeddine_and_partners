@@ -57,8 +57,8 @@ const t = useTranslations('fr');
           )}
 
           {/* 🔹 Prix (si payant sans lien d'achat direct) */}
-          {publication.prix && publication.prix > 0 && !publication.lien_achat && (
-            <p class="publication-price">{publication.prix} DA HT</p>
+          {publication.prix !== undefined && publication.prix !== 0 && !publication.lien_achat && (
+            <p class="publication-price">{typeof publication.prix === 'string' ? publication.prix : publication.prix + ' DA HT'}</p>
           )}
 
           {/* 🔹 Extrait PDF si disponible */}
@@ -105,7 +105,7 @@ const t = useTranslations('fr');
       <div class="publication-card publication-right">
         <h1 class="section-title">{publication.title}</h1>
         <p class="publication-meta">
-          <strong>{t('publications.published_on')}</strong> {publication.date_mise_en_ligne}
+          <strong>{t('publications.published_on')}</strong> {publication.display_date || publication.date_mise_en_ligne}
         </p>
 
         <div class="publication-content">

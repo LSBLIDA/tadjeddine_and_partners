@@ -3,10 +3,11 @@ export interface Publication {
   title: string;
   meta_title?: string;
   date_mise_en_ligne: string;
+  display_date?: string;
   image_couverture: string;
   description: string[];
   excerpt?: string;
-  prix?: number;
+  prix?: number | string;
   is_free?: boolean;
   apercu_url?: string | null;
   fichier_url?: string | null;
@@ -15,6 +16,24 @@ export interface Publication {
 }
 
 export const publications: Publication[] = [
+  {
+    slug: "abix-etude-sectorielle-analyse-secteur-bancaire-algerien-2025",
+    title: "ABIX – Étude sectorielle : Analyse du secteur bancaire algérien 2025",
+    meta_title: "ABIX – Étude sectorielle : Analyse du secteur bancaire algérien 2025",
+    date_mise_en_ligne: "2026-08-01",
+    display_date: "Août 2026",
+    image_couverture: "/uploads/abix-2026.jpg",
+    description: [
+      "L’édition 2026 d’ABIX propose une analyse approfondie des performances 2025 du secteur bancaire algérien, avec comparaisons entre banques, ratios financiers, classements, tendances sectorielles et perspectives."
+    ],
+    excerpt: "L’édition 2026 d’ABIX propose une analyse approfondie des performances 2025 du secteur bancaire algérien, avec comparaisons entre banques, ratios financiers, classements, tendances sectorielles et perspectives.",
+    prix: "À partir de 84 000 DA HT",
+    is_free: false,
+    apercu_url: null,
+    fichier_url: null,
+    lien_achat: "https://algeriabankingindex.com/fr/editions/2026/",
+    redirect_url: "https://algeriabankingindex.com/fr/editions/2026/"
+  },
   {
     slug: "etude-sectorielle-analyse-secteur-bancaire-algerien-2024",
     title: "Étude sectorielle – Analyse du secteur bancaire algérien 2024",
@@ -30,8 +49,8 @@ export const publications: Publication[] = [
     is_free: false,
     apercu_url: "/uploads/apercu_etude_bancaire_2025_4b9a425b5b.pdf",
     fichier_url: "/uploads/Analyse_du_secteur_bancaire_edition_2025_modifs_apportees_155eaaf6fd.pdf",
-    lien_achat: "https://tadjeddine-partners.com/banques2025/",
-    redirect_url: "https://tadjeddine-partners.com/banques2025/"
+    lien_achat: "https://algeriabankingindex.com/fr/editions/2025/",
+    redirect_url: "https://algeriabankingindex.com/fr/editions/2025/"
   },
   {
     slug: "e-gouvernement-en-algerie-etat-des-lieux-obstacles-et-solutions",
@@ -51,7 +70,7 @@ export const publications: Publication[] = [
     is_free: false,
     apercu_url: "/uploads/apercudulivre_avec_4eme_de_couverture_0982bfedeb.pdf",
     fichier_url: null,
-    lien_achat: "https://tadjeddine-partners.com/livre/"
+    lien_achat: "/livre/"
   },
   {
     slug: "e-gouvernement-algerie-enquete-nations-unies-2022",
