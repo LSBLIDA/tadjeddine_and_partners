@@ -1,0 +1,53 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/publications.css';
+
+
+const res = await fetch(
+  `${import.meta.env.PUBLIC_STRAPI_URL}/api/publications?populate=*&sort=Date_mise_en_ligne:desc`
+);
+
+const { data } = await res.json();
+const publications = data || [];
+---
+
+<Layout title="Publications">
+  <section class="publications-section container">
+    <h1 class="section-title"><i class="fas fa-book"></i> Nos Publications</h1>
+    <p class="section-subtitle">Découvrez nos dernières publications et rapports</p>
+
+    {publications.length === 0 ? (
+      <p class="no-publications">Aucune publication disponible pour le moment.</p>
+    ) : (
+      <div class="publications-grid">
+        {publications.map(pub => (
+          <a href={`/publications/${pub.Slug}`} class="publication-card">
+            
+            {pub.Image_couverture?.url && (
+              <img 
+                src={`${import.meta.env.PUBLIC_STRAPI_URL}${pub.Image_couverture.url}`} 
+                alt={pub.Titre} 
+                class="publication-img"
+              />
+            )}
+
+            <h2 class="publication-title">
+              <i class="fas fa-file-alt"></i> {pub.Titre || "Sans titre"}
+            </h2>
+            <p class="publication-meta">
+              <i class="fas fa-calendar-alt"></i> {pub.Date_mise_en_ligne || "Date inconnue"} 
+              &nbsp;|&nbsp; 
+              <i class="fas fa-tag"></i> {pub.Prix > 0 ? pub.Prix + " DA" : "Gratuit"}
+            </p>
+            <p class="publication-excerpt">
+              {pub.Description?.[0]?.children?.[0]?.text?.slice(0, 120) || "Pas de description..."}
+            </p>
+            <span class="read-more">
+              <i class="fas fa-arrow-right"></i> Lire plus
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Layout>

@@ -1,0 +1,82 @@
+.publications-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cadres par ligne */
+  gap: 20px;
+}
+
+.publication-card {
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 15px;
+  text-decoration: none;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+}
+
+.publication-img {
+  width: 100%;             /* prend toute la largeur */
+  height: 200px;           /* hauteur fixe */
+  object-fit: contain;     /* adapte l’image sans la couper */
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.publication-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 8px 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+.publication-meta,
+.publication-excerpt {
+  font-size: 0.9rem;
+  color: #cccccc;
+  text-align: center;
+}
+
+.read-more {
+  margin-top: 10px;
+  color: #d4af37;   /* doré */
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: #b58e2c;   /* doré foncé au hover */
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Tablettes : 2 colonnes */
+@media (max-width: 1024px) {
+  .publications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobiles : 1 colonne */
+@media (max-width: 768px) {
+  .publications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .publication-card {
+    padding: 12px;
+  }
+
+  .publication-img {
+    height: 180px;
+  }
+}

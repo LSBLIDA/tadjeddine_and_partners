@@ -1,0 +1,127 @@
+.publication-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 2 colonnes par défaut */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.publication-card {
+  background: #1e1e2f;
+  border-radius: 12px;
+  padding: 20px;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.publication-left {
+  justify-content: flex-start;
+}
+
+.publication-right {
+  align-items: flex-start;
+}
+
+.publication-img {
+  max-width: 100%;
+  height: auto;   /* la hauteur suit l’image */
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.publication-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #d4af37;   /* doré */
+  color: #1e1e2f;        /* texte sombre pour contraste */
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.download-btn:hover {
+  background: #b58e2c;   /* doré foncé au hover */
+  color: #ffffff;        /* texte blanc au hover */
+}
+
+/* 🔙 Lien retour */
+.back-to-publications {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.back-to-publications a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #d4af37;   /* doré */
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-to-publications a:hover {
+  color: #b58e2c;   /* doré foncé au hover */
+}
+
+.back-to-publications i {
+  font-size: 0.9rem;
+}
+
+
+/* 🎨 Personnalisation du bouton Achat immédiat Ecwid en doré */
+.publication-left .ecwid-btn.ecwid-btn--primary.ecwid-btn--addToBag.ecwid-btn--actionOK {
+  background-color: #d4af37 !important;  /* doré */
+  color: #1e1e2f !important;             /* texte sombre pour contraste */
+  border-radius: 6px !important;
+  padding: 10px 20px !important;
+  font-weight: bold !important;
+  text-transform: none !important; /* évite majuscules forcées */
+  border: none !important;
+}
+
+.publication-left .ecwid-btn.ecwid-btn--primary.ecwid-btn--addToBag.ecwid-btn--actionOK:hover {
+  background-color: #b58e2c !important;  /* doré foncé au hover */
+  color: #ffffff !important;             /* texte blanc au hover */
+}
+
+
+/* ✅ Responsive */
+@media (max-width: 1024px) {
+  .publication-detail-grid {
+    grid-template-columns: 1fr; /* bascule en 1 colonne sur tablette et mobile */
+  }
+
+  .publication-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .publication-right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .download-btn,
+  .ecwid .ecwid-btn--primary {
+    width: 100%; /* pleine largeur sur mobile */
+    text-align: center;
+  }
+
+  .back-to-publications {
+    text-align: center;
+  }
+}

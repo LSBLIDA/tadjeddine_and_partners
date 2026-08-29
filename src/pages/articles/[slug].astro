@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { marked } from 'marked';
+import '../../styles/article-slug.css';
+
+// Configuration Marked pour supporter YouTube
+marked.use({
+  mangle: false,
+  headerIds: false,
+  renderer: {
+    link(token) {
+      const href = token.href || "";
+      const text = token.text || href;
+
+      if (href.startsWith("youtube:")) {
+        const videoId = href.replace("youtube:", "");
+        return `
+          <div class="video-wrapper">
+            <iframe 
+              src="https://www.youtube.com/embed/${videoId}" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        `;
+      }
+
+      return `<a href="${href}">${text}</a>`;
+    }
+  }
+});
+
+export async function getStaticPaths() {
+  const res = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}/api/articles?populate=*`);
+  const { data } = await res.json();
+
+  return data.map(article => ({
+    params: { slug: article.Slug },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+
+// Champs SEO avec fallback
+const meta_title = article.seo?.meta_title || article.title;
+const meta_description = article.seo?.meta_description || (article.Contenu ? article.Contenu.slice(0, 150) : "");
+const canonicalUrl = `${Astro.site}/articles/${article.Slug}`;
+
+const imageUrl = article.Image_couverture
+  ? import.meta.env.PUBLIC_STRAPI_URL + article.Image_couverture.url
+  : null;
+---
+
+<Layout title={meta_title}>
+<head>
+  <title>{meta_title}</title>
+  <meta name="description" content={meta_description} />
+
+  <!-- Open Graph (LinkedIn, Facebook) -->
+  <meta property="og:title" content={meta_title} />
+  <meta property="og:description" content={meta_description} />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content={`${Astro.site}/articles/${article.Slug}`} />
+  {imageUrl && <meta property="og:image" content={imageUrl} />}
+  {imageUrl && <meta property="og:image:alt" content={article.title} />}
+  {imageUrl && <meta property="og:image:width" content="1200" />}
+  {imageUrl && <meta property="og:image:height" content="630" />}
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={meta_title} />
+  <meta name="twitter:description" content={meta_description} />
+  {imageUrl && <meta name="twitter:image" content={imageUrl} />}
+
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
+</head>
+
+
+
+
+  <section class="container">
+    <main class="article-detail">
+      <h1 class="article-title">{article.title}</h1>
+      <p class="article-meta">✍️ {article.Auteur} | 📅 {article.Date_publication}</p>
+      
+      <!-- Liens de partage -->
+      <div class="article-share">
+<a 
+  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(canonicalUrl + '?ref=linkedin&ts=' + Date.now())}`} 
+  target="_blank" 
+  rel="noopener noreferrer">
+  <i class="fab fa-linkedin"></i>
+</a>
+
+
+
+
+
+        <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(canonicalUrl)}`} target="_blank" rel="noopener noreferrer" aria-label="Partager sur Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(canonicalUrl)}&text=${encodeURIComponent(article.title)}`} target="_blank" rel="noopener noreferrer" aria-label="Partager sur Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+
+      {imageUrl && (
+        <div class="article-cover">
+          <img src={imageUrl} alt={article.title} />
+        </div>
+      )}
+
+      <div class="article-content" set:html={marked(article.Contenu || '')}></div>
+
+      <div class="back-to-articles">
+        <a href="/articles">← Retour aux articles</a>
+      </div>
+    </main>
+  </section>
+</Layout>

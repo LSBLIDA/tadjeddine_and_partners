@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Vidéo 1",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/iIzNwwq6_cQ?si=Y2b1ziLUYfDNeErC",
+    "downloadLink": "https://youtu.be/iIzNwwq6_cQ?si=Y2b1ziLUYfDNeErC"
+  },
+  {
+    "name": "Vidéo 2",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/fNdUOnfxWds?si=Pz6e0JIoMykG_G-V",
+    "downloadLink": "https://youtu.be/fNdUOnfxWds?si=Pz6e0JIoMykG_G-V"
+  },
+  {
+    "name": "Vidéo 3",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/9b8lStjLP90?si=g1hqGIFJJlCQ9Gf6",
+    "downloadLink": "https://youtu.be/9b8lStjLP90?si=g1hqGIFJJlCQ9Gf6"
+  },
+  {
+    "name": "Vidéo 4",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/fNdUOnfxWds?si=wg15ZA9ReSZi9xGK",
+    "downloadLink": "https://youtu.be/fNdUOnfxWds?si=wg15ZA9ReSZi9xGK"
+  },
+  {
+    "name": "Vidéo 5",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/IB5PM5tvkyE?si=nAJ7Xl-ATTy1am4a",
+    "downloadLink": "https://youtu.be/IB5PM5tvkyE?si=nAJ7Xl-ATTy1am4a"
+  },
+  {
+    "name": "Vidéo 6",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/VUCaEDjGxIg?si=BzZ_dOjuFRSI_Yu_",
+    "downloadLink": "https://youtu.be/VUCaEDjGxIg?si=BzZ_dOjuFRSI_Yu_"
+  }
+  ,
+  {
+    "name": "Vidéo 7",
+    "mimeType": "video/youtube",
+    "webViewLink": "https://youtu.be/uT1fc9QzQmA",
+    "downloadLink": "https://youtu.be/uT1fc9QzQmA"
+  }
+]

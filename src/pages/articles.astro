@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/articles.css';
+
+const res = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}/api/articles?populate=*&sort=Date_publication:desc`);
+const { data } = await res.json();
+const articles = data || [];
+---
+
+<Layout title="Articles">
+  <section class="articles-section">
+    <h1 class="section-title">Nos Articles</h1>
+    <p class="section-subtitle">Découvrez nos dernières publications et analyses</p>
+
+    {articles.length === 0 ? (
+      <p class="no-articles">Aucun article disponible pour le moment.</p>
+    ) : (
+      <div class="articles-grid">
+        {articles.map(article => {
+          const imageUrl = article.Image_couverture
+            ? import.meta.env.PUBLIC_STRAPI_URL + article.Image_couverture.url
+            : null;
+
+          return (
+            <div class="article-card">
+              {imageUrl && (
+                <div class="article-thumb">
+                  <img src={imageUrl} alt={article.title} />
+                </div>
+              )}
+              <a href={`/articles/${article.Slug}`} class="article-title">
+                {article.title}
+              </a>
+              <p class="article-meta">
+                ✍️ {article.Auteur || "Auteur inconnu"} | 📅 {article.Date_publication || "Date non précisée"}
+              </p>
+              <p class="article-excerpt">
+                {article.Contenu?.slice(0, 200)}...
+              </p>
+              <a href={`/articles/${article.Slug}`} class="read-more">Lire l’article →</a>
+            </div>
+          );
+        })}
+      </div>
+    )}
+  </section>
+</Layout>

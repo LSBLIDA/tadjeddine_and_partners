@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/contact.css';
+
+---
+
+<Layout title="Contactez-nous">
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">Contactez-nous</h2>
+      <p class="section-subtitle">
+        Prêt à transformer votre entreprise ? Contactez-nous dès aujourd'hui pour un accompagnement personnalisé et efficace.
+      </p>
+
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:info@tadjeddine-partners.com">info@tadjeddine-partners.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="contact-details">
+              <h4>Téléphone</h4>
+              <a href="tel:+213560403405">05.60.403.405</a><br />
+              <a href="tel:+213560349059">05.60.349.059</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="contact-details">
+              <h4>Horaires</h4>
+              <p>Dim - Jeu: 9h00 - 16h00</p>
+              <p>Sam: 9h00 - 13h00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <div class="iframe-container">
+            <iframe
+              width="100%"
+              height="600"
+              src="https://fenekio.com/tandp/ps/forms/wtl/c5040eb5db4cc6676466348f789133bb"
+              frameborder="0"
+              sandbox="allow-top-navigation allow-forms allow-scripts allow-same-origin allow-popups"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-icon {
+    font-size: 1.8rem;
+    color: #ccc; /* Couleur monochrome */
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+  }
+</style>
